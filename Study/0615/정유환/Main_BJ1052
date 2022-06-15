@@ -1,0 +1,37 @@
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.util.StringTokenizer;
+
+public class Main_BJ1052 {
+
+	public static void main(String[] args) throws Exception {
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		StringTokenizer st = new StringTokenizer(br.readLine(), " ");
+		
+		int N = Integer.parseInt(st.nextToken());
+		int K = Integer.parseInt(st.nextToken());
+		
+		if(N <= K) System.out.println(0);
+		else {
+			int bottle = 0;
+			
+			while(true) {
+				int t = N;				
+				int cnt = 0;
+				
+				while(t > 0) {
+					if(t % 2 != 0) cnt++;
+					t /= 2;
+				}
+				
+				if(cnt <= K) break;
+				
+				N++;
+				bottle++;
+			}
+			
+			System.out.println(bottle);
+		}
+	}
+
+}
