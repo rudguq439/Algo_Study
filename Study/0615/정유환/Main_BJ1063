@@ -13,13 +13,12 @@ public class Main_BJ1063 {
 		int tky = ky + dy[d];
 		int tsx = sx + dx[d];
 		int tsy = sy + dy[d];
-		boolean moved = false;
 		
 		//이동 위치가 범위에 벗어나는지
 		if(tkx < 1 || tkx > 8 || tky < 1 || tky > 8) return;
-		else moved = true;
+
 		//이동 위치가 돌 위치
-		if(tkx == sx && tky == sy && moved) {
+		if(tkx == sx && tky == sy) {
 			if(tsx < 1 || tsx > 8 || tsy < 1 || tsy > 8) return;
 			
 			sx = tsx;
