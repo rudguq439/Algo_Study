@@ -47,8 +47,8 @@ const fs = require("fs");
 const filePath = process.platform === "linux" ? "/dev/stdin" : "./input.txt";
 let input = fs.readFileSync(filePath).toString().split("\n");
 const isRoad = (road, L) => {
-  // count 가 음수: 앞으로 해당 칸만큼 교차로가 설치되어야 한다.
-  // count 가 양수: 앞의 칸들 중에서 count 된 칸 수만큼 교차로를 설치할 수 있다.
+  // count 가 음수: 앞으로 해당 칸만큼 경사로가 설치되어야 한다.
+  // count 가 양수: 앞의 칸들 중에서 count 된 칸 수만큼 경사로를 설치할 수 있다.
   let count = 1;
   for (let i = 0; i < road.length - 1; i++) {
     if (road[i] === road[i + 1]) count++;
